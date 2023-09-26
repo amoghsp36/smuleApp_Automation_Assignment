@@ -17,7 +17,35 @@ repositories {
 
 dependencies {
     // Use TestNG framework, also requires calling test.useTestNG() below
-    testImplementation 'org.testng:testng:7.5'
+    //testImplementation 'org.testng:testng:7.5'
+        // Rest Assured
+        implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.1'
+
+        // Jackson Databind
+        implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
+
+        // Selenium Java
+        implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.12.1'
+
+        // TestNG
+        testImplementation group: 'org.testng', name: 'testng', version: '7.8.0'
+
+        // Appium Java Client
+        implementation group: 'io.appium', name: 'java-client', version: '8.5.1'
+
+        // JSON Simple
+        implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+        // Project Lombok
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+
+        // Allure TestNG
+        testImplementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
+
+        // Allure Rest Assured
+        testImplementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.24.0'
+
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
