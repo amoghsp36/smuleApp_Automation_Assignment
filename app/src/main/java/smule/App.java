@@ -13,3 +13,11 @@ public class App {
     }
 }
 
+//class name -enter profile name- android.widget.EditText
+//android.widget.Button[@text='Next']  next button
+
+//android.widget.GridView[@index='3']/android.widget.FrameLayout[@index='0']/android.view.ViewGroup/android.widget.ImageView[@index='6']
+
+//for checkbox
+
+//android.widget.Button[@text='No thanks'] button

@@ -18,4 +18,14 @@ public class ConfigLoader {
         return jsonPath.getMap(".");
     }
 
+    public Map getJsonPath(String filePath){
+        JsonPath jsonPath = null;
+        try{
+            String path = System.getProperty("user.dir")+filePath;
+            jsonPath = new JsonPath(new FileInputStream(path));
+        }catch (FileNotFoundException e){
+            throw new RuntimeException(e);
+        }
+        return jsonPath.getMap(".");
+    }
 }

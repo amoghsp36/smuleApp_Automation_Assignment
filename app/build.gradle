@@ -41,10 +41,11 @@ dependencies {
         annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
 
         // Allure TestNG
-        testImplementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
+        implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
 
-        // Allure Rest Assured
-        testImplementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.24.0'
+
+    // Allure Rest Assured
+        implementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.24.0'
 
 
     // This dependency is used by the application.
