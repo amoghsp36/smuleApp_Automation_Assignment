@@ -5,19 +5,23 @@
  * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/8.2.1/userguide/building_java_projects.html in the Gradle documentation.
  */
 
-plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    id 'application'
-}
 
-repositories {
-    // Use Maven Central for resolving dependencies.
-    mavenCentral()
-}
+    plugins {
+        // Apply the application plugin to add support for building a CLI application in Java.
+        id 'application'
+        //id 'io.qameta.allure'
+    }
 
-dependencies {
-    // Use TestNG framework, also requires calling test.useTestNG() below
-    //testImplementation 'org.testng:testng:7.5'
+    repositories {
+        // Use Maven Central for resolving dependencies.
+        mavenCentral()
+    }
+
+    dependencies {
+        // Use TestNG framework, also requires calling test.useTestNG() below
+        //testImplementation 'org.testng:testng:7.5'
+        //classpath "io.qameta.allure:allure-gradle:2.3"
+
         // Rest Assured
         implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.1'
 
@@ -35,6 +39,9 @@ dependencies {
 
         // JSON Simple
         implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+        //Faker
+        implementation 'com.github.javafaker:javafaker:1.0.2'
+
 
         // Project Lombok
         compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
@@ -44,14 +51,13 @@ dependencies {
         implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
 
 
-    // Allure Rest Assured
+        // Allure Rest Assured
         implementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.24.0'
 
 
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:31.1-jre'
-}
-
+        // This dependency is used by the application.
+        implementation 'com.google.guava:guava:31.1-jre'
+    }
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
@@ -68,3 +74,10 @@ tasks.named('test') {
     // Use TestNG for unit tests.
     useTestNG()
 }
+
+//allure {
+//    version = '2.2.1'
+//    autoconfigure = true
+//    aspectjweaver = true
+//    allureJavaVersion = LATEST_VERSION
+//}

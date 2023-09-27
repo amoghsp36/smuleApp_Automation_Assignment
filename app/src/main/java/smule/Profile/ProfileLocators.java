@@ -17,6 +17,9 @@ public class ProfileLocators extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Next']")
     public WebElement nextButton;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Skip']")
+    public WebElement skipButton;
+
     @AndroidFindBy(xpath = "//android.widget.GridView[@index='3']/android.widget.FrameLayout[@index='0']/android.view.ViewGroup/android.widget.ImageView[@index='6']")
     public WebElement selectGenres;
 

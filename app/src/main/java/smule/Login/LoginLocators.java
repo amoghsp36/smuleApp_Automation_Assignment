@@ -17,16 +17,16 @@ public class LoginLocators extends BasePage {
     @AndroidFindBy(id = "com.smule.singandroid:id/yesButton")
     public WebElement okButton;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Sign in with Google' and @index='1']")
-    public WebElement signInWithGoogle;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Sign in with Email' and @index='2']")
+    public WebElement signInWithEmail;
 
     @AndroidFindBy(className = "android.widget.EditText")
-    public WebElement enterEmailOrPhoneNo;
+    public WebElement enterEmail;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Next']")
     public WebElement nextButton;
 
-    @AndroidFindBy(className = "android.widget.EditText")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text='Enter Password']")
     public WebElement enterPassword;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='I agree']")
