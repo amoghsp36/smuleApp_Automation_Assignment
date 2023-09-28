@@ -1,6 +1,7 @@
 package smule.Login;
 
 import common_utils.ScrollUtils;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
 import smule.Profile.ProfileScreen;
@@ -14,7 +15,7 @@ public class LoginScreen extends LoginLocators{
     ScrollUtils scrollUtils = new ScrollUtils();
     @Step("selecting language and clicking ok")
     public LoginScreen selectLangAndClickOK() {
-        androidDriver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"English\"))"));
+        androidDriver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"English\"))"));
         //scrollUtils.scrollToView("English");
         //actions.tap(selectLanguage);
         selectLanguage.click();
@@ -44,3 +45,4 @@ public class LoginScreen extends LoginLocators{
         return new ProfileScreen();
     }
 }
+

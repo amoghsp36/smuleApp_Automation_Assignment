@@ -14,4 +14,7 @@ public class UserProfileLocators extends BasePage {
     @AndroidFindBy(id = "com.smule.singandroid:id/txt_username_handle")
     public WebElement userEmail;
 
+    @AndroidFindBy(id = "com.smule.singandroid:id/txt_username")
+    public WebElement userProfileName;
+
 }

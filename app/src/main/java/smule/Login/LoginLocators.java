@@ -20,6 +20,12 @@ public class LoginLocators extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Sign in with Email' and @index='2']")
     public WebElement signInWithEmail;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Sign in with Google' and @index='1']")
+    public WebElement signInWithGoogle;
+
+    @AndroidFindBy(xpath = "//android.widget.LinearLayout/android.widget.LinearLayout[@index='1']/android.widget.TextView[@text='amoghpurohit001@gmail.com']")
+    public WebElement selectEmailAccount;
+
     @AndroidFindBy(className = "android.widget.EditText")
     public WebElement enterEmail;
 

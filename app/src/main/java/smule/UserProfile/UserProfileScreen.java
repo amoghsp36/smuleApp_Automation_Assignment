@@ -10,4 +10,7 @@ public class UserProfileScreen extends UserProfileLocators{
     public String userProfileEmailText(){
         return userEmail.getText();
     }
+    public String userProfileNameText(){
+        return userProfileName.getText();
+    }
 }
