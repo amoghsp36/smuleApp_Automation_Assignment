@@ -16,4 +16,15 @@ public class SongBookLocators extends BasePage {
 
     @AndroidFindBy(id = "com.smule.singandroid:id/noButton")
     public WebElement noThanksButton;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Search for songs, singers, invites…']")
+    public WebElement searchSongs;
+
+    @AndroidFindBy(className = "android.widget.EditText")
+    public WebElement searchSongsTwo;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='arijit singh']")
+    public WebElement searchText;
+
+
 }

@@ -11,10 +11,19 @@ public class UserProfileLocators extends BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(androidDriver),this);
     }
 
-    @AndroidFindBy(id = "com.smule.singandroid:id/txt_username_handle")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@index='11']")
     public WebElement userEmail;
 
-    @AndroidFindBy(id = "com.smule.singandroid:id/txt_username")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@index='10']")
     public WebElement userProfileName;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Playlists']")
+    public WebElement profilePlaylistTextView;
+
+    @AndroidFindBy(id = "com.smule.singandroid:id/btn_menu")
+    public WebElement menuButton;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Settings']")
+    public WebElement settingsTextView;
 
 }

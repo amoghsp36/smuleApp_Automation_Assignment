@@ -20,6 +20,12 @@ public class HomeLocators extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='No, thanks']")
     public WebElement popUpNoThanks;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Profile']")
+    @AndroidFindBy(accessibility = "Profile, New notification")
     public WebElement profileButton;
+
+    @AndroidFindBy(id = "com.smule.singandroid:id/menu_item_feed")
+    public WebElement feedIcon;
+
+    @AndroidFindBy(id = "com.smule.singandroid:id/noButton")
+    public WebElement noThanksButton;
 }
