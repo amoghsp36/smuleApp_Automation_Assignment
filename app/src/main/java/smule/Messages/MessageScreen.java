@@ -13,7 +13,6 @@ public class MessageScreen extends MessageLocators{
 
     @Step("clicking on new chat")
     public MessageScreen chatButton() throws InterruptedException {
-//        new MessageLocators();
         Thread.sleep(10000);
 //        wait.until(ExpectedConditions.elementToBeClickable(newChatIcon)).click();
 

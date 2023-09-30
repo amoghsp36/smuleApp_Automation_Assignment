@@ -20,6 +20,8 @@ import smule.UserProfile.UserProfileScreen;
 
 import java.util.Map;
 
+import static smule.Settings.SettingsScreen.finalPName;
+
 public class LoginTest extends BaseTest {
     LoginScreen loginScreen;
     ProfileScreen profileScreen;
@@ -95,6 +97,6 @@ public class LoginTest extends BaseTest {
         userProfileScreen = homeScreen.navToProfileSection();
         settingsScreen = userProfileScreen.selectMenuOptions().savingsChanges().scrollToSwitchButtons();
 
+        Assert.assertEquals(settingsScreen.getChangedUserName(),SettingsScreen.finalPName);
     }
 }
-//^(.+)@gmail\.com$

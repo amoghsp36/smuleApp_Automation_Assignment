@@ -11,8 +11,6 @@ public class SongSearchLocators extends BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(androidDriver),this);
     }
 
-
-
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Songs']")
     public WebElement songsList;
 

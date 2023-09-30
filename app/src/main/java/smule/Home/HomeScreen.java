@@ -39,5 +39,9 @@ public class HomeScreen extends HomeLocators{
         profileButton.click();
         return new UserProfileScreen();
     }
+    public UserProfileScreen navToProfileSectionTwo(){
+        profileButtonWithoutNotification.click();
+        return new UserProfileScreen();
+    }
 
 }

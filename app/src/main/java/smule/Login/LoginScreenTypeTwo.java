@@ -15,7 +15,6 @@ public class LoginScreenTypeTwo extends LoginLocators{
     }
     @Step("signing in with google")
     public ProfileScreen signIn(){
-        //actions.tap(signInWithGoogle);
         signInWithGoogle.click();
         selectEmailAccount.click();
         return new ProfileScreen();

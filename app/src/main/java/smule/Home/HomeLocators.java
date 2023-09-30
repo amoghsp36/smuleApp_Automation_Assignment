@@ -23,6 +23,9 @@ public class HomeLocators extends BasePage {
     @AndroidFindBy(accessibility = "Profile, New notification")
     public WebElement profileButton;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Profile']")
+    public WebElement profileButtonWithoutNotification;
+
     @AndroidFindBy(id = "com.smule.singandroid:id/menu_item_feed")
     public WebElement feedIcon;
 
