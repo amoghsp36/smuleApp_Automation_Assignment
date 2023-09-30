@@ -20,9 +20,7 @@ import smule.UserProfile.UserProfileScreen;
 
 import java.util.Map;
 
-import static smule.Settings.SettingsScreen.finalPName;
-
-public class LoginTest extends BaseTest {
+public class AllTests extends BaseTest {
     LoginScreen loginScreen;
     ProfileScreen profileScreen;
     HomeScreen homeScreen;
@@ -37,12 +35,16 @@ public class LoginTest extends BaseTest {
     Map credentials = new ConfigLoader().getJsonPath(FilePaths.CREDENTIALS);
     @Test(description = "testing App Login and navigating to profile screen")
     public void testLoginApp() throws InterruptedException {
+        //Arrange
         loginScreen = new LoginScreen();
 
+        //Arrange
         //profileScreen = loginScreen.selectLangAndClickOK().signIn().enterEmail((String) credentials.get("email")).enterPassword((String) credentials.get("password")).termsNConditions();
         profileScreen = loginScreen.selectLangAndClickOK().signIn().enterEmail(FakerUtils.fakeEmail()).enterPassword(FakerUtils.fakePassword());
         homeScreen = profileScreen.genres().homeOp();
         userProfileScreen = homeScreen.getUserEmail();
+
+        //Assert
         Assert.assertTrue(userProfileScreen.isUserProfileDisplayed());
         String[] expected = FakerUtils.fakeEmail().split("@");
         String expect = expected[0];
@@ -52,51 +54,67 @@ public class LoginTest extends BaseTest {
 
     @Test(description = "testing messages and following count")
     public void shouldSendMessages() throws InterruptedException {
+        //Arrange
         loginScreen = new LoginScreen();
-        //loginScreenTypeTwo = new LoginScreenTypeTwo();
-        //profileScreen = loginScreenTypeTwo.selectLangAndClickOK().signIn();
+//        loginScreenTypeTwo = new LoginScreenTypeTwo();
+//        profileScreen = loginScreenTypeTwo.selectLangAndClickOK().signIn();
         profileScreen = loginScreen.selectLangAndClickOK().signIn().enterEmail(FakerUtils.fakeEmail()).enterPassword(FakerUtils.fakePassword());
         homeScreen = profileScreen.genres().homeOp();
+
+        //Act
         songBookScreen = new SongBookScreen();
         messageScreen = songBookScreen.navToMessageScreen().chatButton().searchUserToAdd().addUser().sendMsg();
 
+        //Assert
         Assert.assertEquals(messageScreen.getFollowingText(),"1");
     }
 
     @Test(description = "testing searched artist matches result artist")
     public void shouldTestSearching(){
+        //Arrange
         loginScreenTypeTwo = new LoginScreenTypeTwo();
         profileScreen = loginScreenTypeTwo.selectLangAndClickOK().signIn();
         songBookScreen = new SongBookScreen();
+
+        //Act
         songSearchScreen = songBookScreen.searchBarAction();
 
+        //Assert
         Assert.assertTrue(songSearchScreen.isSongListDisplayed());
         Assert.assertTrue(songSearchScreen.isSearchedArtistNameDisplayed());
     }
 
     @Test(description = "creating playlists in feed and testing playlists in profile")
     public void shouldCreateAndTestPlaylists() throws InterruptedException {
+        //Arrange
         loginScreenTypeTwo = new LoginScreenTypeTwo();
         profileScreen = loginScreenTypeTwo.selectLangAndClickOK().signIn();
         homeScreen = new HomeScreen();
+
+        //Act
         homeScreen = homeScreen.returnHomeScreen();
         feedScreen = homeScreen.navToFeedSection();
         playlistScreen = feedScreen.feedMenu().createNewPlaylist();
         userProfileScreen = new UserProfileScreen();
         profileScreen = userProfileScreen.profilePlaylist();
 
+        //Assert
         Assert.assertEquals(playlistScreen.givenPlayListName(),"PlayList_Test5");
     }
 
     @Test(description = "nav to settings menu and change some settings")
     public void shouldChangeSettings() throws InterruptedException {
+        //Arrange
         loginScreenTypeTwo = new LoginScreenTypeTwo();
         profileScreen = loginScreenTypeTwo.selectLangAndClickOK().signIn();
         homeScreen = new HomeScreen();
+
+        //Act
         homeScreen = homeScreen.returnHomeScreen();
         userProfileScreen = homeScreen.navToProfileSection();
         settingsScreen = userProfileScreen.selectMenuOptions().savingsChanges().scrollToSwitchButtons();
 
+        //Assert
         Assert.assertEquals(settingsScreen.getChangedUserName(),SettingsScreen.finalPName);
     }
 }
